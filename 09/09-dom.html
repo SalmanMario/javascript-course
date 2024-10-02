@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta
+		name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>DOM</title>
+</head>
+<body>
+<button>hello</button>
+<button class="js-button">Second button</button>
+<script>
+	console.log(document.querySelector('button'))
+	document.querySelector('button').innerHTML = 'Changed'
+	const buttonElement  = document.querySelector('.js-button')
+	buttonElement.innerHTML = 'tare'
+	/*
+	console.log(document.title)
+	document.title = 'Changed'
+
+	console.log(document.body)
+	console.log(typeof document.body)
+
+	console.log(document.body.innerHTML)
+	document.body.innerHTML = '<button>Good Job</button>'
+	 */
+
+	/*
+	document.body.innerHTML = 'hello';
+	document.title = 'Good Job'
+	 */
+</script>
+</body>
+</html>

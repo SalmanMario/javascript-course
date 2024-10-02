@@ -1,0 +1,72 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta
+		name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>Objects</title>
+</head>
+<body>
+<p>Objects Exercises</p>
+<script>
+	const product = {
+		basketball: 2095,
+		['delivery-time']: '3 days'
+	}
+
+	console.log(product.basketball)
+	product.basketball = 2595
+
+	console.log('Price change',product.basketball)
+
+	console.log(product)
+
+	function comparePrice(product1, product2){
+		if (product1.price > product2.price) {
+			return product1
+		} else {
+			return product2
+		}
+	}
+
+	const product1 = {
+		name: 'football',
+		price: 1850,
+	}
+
+	const product2 = {
+		name: 'tennis',
+		price: 2000
+	}
+
+	console.log(comparePrice(product1, product2))
+
+	function isSameProduct(product1, product2) {
+		if (product1 === product2) {
+			return true
+		} else {
+			return false
+		}
+	}
+
+	// You can't compare 2 objects directly
+	const product3 = {
+		name: 'car',
+		price: 5
+	}
+
+	// const product4 = {
+	// 	name: 'car',
+	// 	price: 5
+	// }
+
+	const product4 = product3
+
+	console.log(isSameProduct(product3, product4))
+
+	console.log('Good Morning'.toLowerCase())
+	console.log('test'.repeat(2))
+
+</script>

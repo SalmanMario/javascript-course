@@ -1,0 +1,76 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta
+		name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>DOM Exercises</title>
+</head>
+<body>
+<button>9a</button>
+<button class="js-9b-button">9b</button>
+<br>
+<button onclick="document.querySelector('.js-result').innerHTML = 'You picked: heads'">heads</button>
+<button onclick="document.querySelector('.js-result').innerHTML = 'You picked: tails'">tails</button>
+<p class="js-result"></p>
+
+<input class="js-name" type="text"/>
+<input onclick="getName()" type="submit" value="name">
+<p class="js-name-result"></p>
+
+<p>Amazon Shipping Calculator</p>
+<p>Order under $40 = +$10 shipping.</p>
+<p>Order over $40 = FREE shipping.</p>
+<label id="js-order">
+	<input placeholder="Cost of order" type="number" class="js-order"/>
+</label>
+<input onclick="getValue()" type="submit" value="Calculate">
+<p class="js-price-result"></p>
+
+<input onkeyup="{
+getValueWhenType()
+}" type="text" class="another-name"/>
+<p class="js-display-name"></p>
+
+<script>
+	const button9a = document.querySelector('button')
+	document.querySelector('.js-9b-button').innerHTML = '9b done!'
+	console.log(button9a)
+
+	function getName() {
+		const jsNameElem = document.querySelector('.js-name').value
+		document.querySelector('.js-name-result').innerHTML = `Your name is ${jsNameElem}`
+	}
+
+	document.querySelector('.js-name').addEventListener('keydown', (event) => {
+		if (event.key === 'Enter') {
+			getName()
+		}
+	})
+
+	function getValue() {
+		const inputElement = document.querySelector('.js-order')
+
+		let value = inputElement.value * 100
+		if (value <= 4000) {
+			value = value + 1000
+		}
+		document.querySelector('.js-price-result').innerHTML = `$${value / 100}`
+	}
+
+	document.querySelector('.js-order').addEventListener('keydown', (event) => {
+		if (event.key === 'Enter') {
+			getValue()
+		}
+	})
+
+	function getValueWhenType(){
+		let nameElem = document.querySelector('.another-name').value
+		document.querySelector('.js-display-name').innerHTML = nameElem
+	}
+
+</script>
+</body>
+</html>
